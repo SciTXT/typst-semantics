@@ -1,30 +1,14 @@
-# typst-semantics
+# typst-semantics - compact JSON-LD representation of Typst texts
 
-Adding a semantic layer to Typst, enabeling machine interpretable and actionable scientific texts
+Adding a semantic layer to Typst, enabeling machine interpretable and actionable scientific texts.
 
-
-## Overview and Motivation
-
-There is currently a large movement in **science** to make scientific texts machine "understandable" / interpretable and actionable (e.g. in the *FAIR data movement*). 
-A common path many scientists and developers follow is to relate each well defined term in a (scientific) text with a corresponding term from an *Ontology* or *Taxonomy*.  By doing so, the text receives a context and each word receives a well defined meaning (=semantics).
-This enhanced text representation would enable computer programs to "understand" the context of a text and concrete meaning of a certain word in a sentence. This semantic information could, e.g., be used to display further information about a certain concept to the user, or to enable machine learning or AI to interpret the content of a text much more accurately. 
-
-## Example Text with semantics annotations
-
-The following text is an example text from the medical realm with references (in this case as CURIs) to external resources that define or explain the terms in more details
-(the given Links in brackets should only be shown to the user, when she/he moves over a certain term, they should ideally not appear while editing a **Typst** document - or they should be at least hide-able).
-
-`**Oxytocin** is a [peptide hormone](wikidata:Peptide_hormone) and [neuropeptide](wikidata:Neuropeptide) normally produced in the [hypothalamus](wikidata:Hypothalamus) and released by the [posterior pituitary](ncit:Posterior_pituitary).[[4]](https://en.wikipedia.org/wiki/Oxytocin#cite_note-4) [...] **Oxytocin** is released into the bloodstream as a hormone in response to [sexual activity](https://en.wikipedia.org/wiki/Human_sexual_activity) and during childbirth [...]`
+This implementation is based on the [JSON-LD](https://json-ld.org/) standard, which is a lightweight Linked Data format. It is easy for humans to read and write and easy for machines to parse and generate. It is based on the already existing JSON format and provides a way to help JSON data interoperate at Web-scale.
 
 
-## Repository structure
+## Key Features
 
-Within this repository, different implementations should be explored, discussed and compared.
-
-Each **Branch** represents a certain implementation as a Proof-of-Concept.
-
-## Discussions
-
-Please use the **Issues** section to discuss the different implementations and to propose new ideas or improvements.
-
+- text is represented as a JSON-LD object
+- each word in a text is represented just once. The text is represented as a list of references to the words.
+- each term in a text is represented as a reference to a concept in a controlled vocabulary / taxonomy / ontology 
+- the Tpyst text and the semantic layer could be efficiently stored in a compressed file, using, e.g., the [OASIS Package Standard](docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html) = a ZIP compressed file with Metadata.
 
