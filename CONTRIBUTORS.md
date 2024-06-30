@@ -1,5 +1,5 @@
 # Contributors to this implemtation
 
-- [mark doerr](mailto:mark.doerr@uni-greifswald.de)
-- [Stefan Born](TU-Berlin)
+- [mark doerr (University Greifswald)](mailto:mark.doerr@uni-greifswald.de)
+- [Stefan Born (TU-Berlin)]()
 
